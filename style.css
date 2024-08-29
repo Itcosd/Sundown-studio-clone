@@ -648,6 +648,7 @@ nav {
 
 
 #page6 {
+
     min-height: 105vh;
     z-index: -99;
     width: 100%;
@@ -881,6 +882,10 @@ nav {
     transform: rotate(45deg) translate(-7px, -3px);
 }
 
+.fixed-image {
+    display: none;
+}
+
 @media (max-width:600px) {
 
     /* page1 */
@@ -906,7 +911,7 @@ nav {
     }
 
     #menu {
-        gap:3vw;
+        gap: 3vw;
         display: flex;
         align-items: center;
         padding: 3vw 5vw;
@@ -1137,7 +1142,7 @@ nav {
 
     #services-data {
         width: 100%;
-        margin-bottom: 10vh;
+        margin-bottom: 4vh;
     }
 
     #data-text {
@@ -1153,6 +1158,8 @@ nav {
     }
 
     #data-desc {
+        overflow: visible;
+        height: 50%;
         font-size: 4vw;
     }
 
@@ -1222,9 +1229,7 @@ nav {
 
     /* page6 */
     #page6 {
-        height: 100vh;
-        background-color: #EFEAE3;
-        bottom: 0;
+        min-height: 105vh;
         z-index: -99;
         width: 100%;
         position: relative;
@@ -1247,7 +1252,9 @@ nav {
         font-weight: 100;
         padding-right: 10vw;
     }
-
+    body{
+        background-color: #EFEAE3;
+    }
     #footer {
         background-color: #000000;
         position: fixed;
@@ -1261,6 +1268,7 @@ nav {
         z-index: -1;
         overflow: hidden;
         justify-content: flex-end;
+
     }
 
     #footer-data {
