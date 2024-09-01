@@ -118,12 +118,9 @@ function Elements() {
 
     if (window.innerWidth <= 600) {
         elems.forEach((elem) => {
-            // Create the div only if max-height is 600px
             const fixedImageDiv = document.createElement("div");
-            fixedImageDiv.id = "image";
             fixedImageDiv.className = "fixed-image";
             elem.querySelector(".overlay").after(fixedImageDiv);
-
             let image = document.createElement("img");
             let video = document.createElement("video");
             video.autoplay = true;
@@ -145,8 +142,25 @@ function Elements() {
             fixedImageDiv.style.display = "block";
         });
     }
+    else {
+        elems.forEach((elem) => {
+            let fixedImageDiv =document.getRootNode(elem);
+            fixedImageDiv.style.display = "none";
+        })
+    }
 }
 
+function Loader() {
+    let lodder = document.querySelector("#loader");
+    let texts = document.querySelectorAll("#loader .loader-text");
+
+    texts.forEach((text) => {
+        setTimeout(() => {
+            lodder.style.top = "-100%";
+        }, 4000); // Delay each text appearance
+    });
+};
+Loader();
 Anima();
 Data();
 SwiperJS();
@@ -154,6 +168,7 @@ Menu();
 Elements();
 
 window.addEventListener('resize', () => {
+    Loader();
     Anima();
     Data();
     SwiperJS();
